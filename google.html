@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      color: #202124;
+    }
+
+    /* 상단 네비게이션 헤더 */
+    header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 20px;
+      gap: 15px;
+    }
+
+    header a {
+      color: rgba(0, 0, 0, 0.87);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    .menu-icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    .menu-icon:hover {
+      opacity: 1;
+    }
+
+    .profile-pic {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #0b57d0;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    /* 중앙 검색 구역 */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: -50px;
+    }
+
+    .logo {
+      margin-bottom: 25px;
+    }
+
+    .search-container {
+      width: 100%;
+      max-width: 584px;
+      padding: 0 15px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      padding: 10px 16px;
+      box-shadow: none;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    .search-bar:hover, .search-bar:focus-within {
+      box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+      border-color: rgba(223, 225, 229, 0);
+    }
+
+    .search-bar svg {
+      width: 20px;
+      height: 20px;
+      fill: #9aa0a6;
+      margin-right: 12px;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    /* 버튼 영역 */
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      background-color: #f8f9fa;
+      border: 1px solid #f8f9fa;
+      border-radius: 4px;
+      color: #3c4043;
+      font-size: 14px;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      border: 1px solid #dadce0;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+      color: #202124;
+    }
+
+    /* 하단 푸터 */
+    footer {
+      background-color: #f2f2f2;
+      color: #70757a;
+      font-size: 14px;
+    }
+
+    .footer-location {
+      padding: 15px 30px;
+      border-bottom: 1px solid #dadce0;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 15px 30px;
+    }
+
+    .footer-links div {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-links a {
+      color: #70757a;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 -->
+  <header>
+    <a href="#">Gmail</a>
+    <a href="#">이미지</a>
+    <!-- 앱 아이콘 -->
+    <svg class="menu-icon" viewBox="0 0 24 24">
+      <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <!-- 프로필 아이콘 -->
+    <div class="profile-pic">G</div>
+  </header>
+
+  <!-- 메인 구역 -->
+  <main>
+    <!-- 구글 로고 이미지 -->
+    <img class="logo" src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x91dp.png" alt="Google Logo" width="272" height="92">
+    
+    <!-- 검색창 -->
+    <div class="search-container">
+      <div class="search-bar">
+        <!-- 돋보기 아이콘 -->
+        <svg viewBox="0 0 24 24">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" class="search-input">
+      </div>
+    </div>
+
+    <!-- 검색 버튼 -->
+    <div class="buttons">
+      <button class="btn">Google 검색</button>
+      <button class="btn">I'm Feeling Lucky</button>
+    </div>
+  </main>
+
+  <!-- 하단 푸터 -->
+  <footer>
+    <div class="footer-location">대한민국</div>
+    <div class="footer-links">
+      <div>
+        <a href="#">Google 정보</a>
+        <a href="#">광고</a>
+        <a href="#">비즈니스</a>
+        <a href="#">검색의 원리</a>
+      </div>
+      <div>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">약관</a>
+        <a href="#">설정</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
